@@ -58,7 +58,8 @@ body {
 .output {
     color:rgb(255, 0, 0);
     font-family: 'Balsamiq Sans';
-    text-align:center
+    text-align:center;
+    margin-top: -35px
 }
 .line {
     text-align: center;
