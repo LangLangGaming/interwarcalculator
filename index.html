@@ -16,7 +16,7 @@
     <h1 class="heading">
         CALCULATOR FOR INTERWAR NRP AND EMPIRES NRP
     </h1>
-    <h1 class="calculatortype">POPULATION GROWTH CALCULATOR</h1>
+    <h1 class="calculatortype">POPULATION GROWTH CALCULATOR (CORE / NON CORE POPULATION) </h1>
     <div>
         <p class="inputwhat">Enter Population</p>
         <input type="text" id="populationOriginal" oninput="calculatePopulation();" class="input"><br>
@@ -30,15 +30,32 @@
     </div>
     <h1 class="line">_____________________________________________________________________________</h1>
     <h1 class="calculatortype">
-        BUDGET CALCULATOR
+        BUDGET CALCULATOR (CORE POPULATION ONLY)
     </h1>
-    <p class="inputwhat">Enter Population</p>
-    <input type="text" id="population" oninput="calculateTotal();" class="input"><br>
-    <p class="inputwhat">Enter GDP per Capita</p>
-    <input type="text" id="gdp" oninput="calculateTotal();" class="input"><br>
+    <p class="inputwhat">Enter Core Population</p>
+    <input type="text" id="population" oninput="calculateBudget();" class="input"><br>
+    <p class="inputwhat">Enter Core GDP per Capita</p>
+    <input type="text" id="gdp" oninput="calculateBudget();" class="input"><br>
     <div id="flex_container">
         <h1 style="font-family:'Balsamiq Sans';margin-top: -35px">BUDGET: </h1>
         <h1 id="outputBudget" class="output">
+        </h1>
+    </div>
+    <h1 class="line">_____________________________________________________________________________</h1>
+    <h1 class="calculatortype"> 
+        BUDGET CALCULATOR (CORE, NON CORE POPULATION)
+    </h1>
+    <p class="inputwhat">Enter Core Population</p>
+    <input type="text" id="corepopulation" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Core GDP per Capita</p>
+    <input type="text" id="coregdp" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Non-Core Population</p>
+    <input type="text" id="noncorepopulation" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Non-Core GDP per Capita</p>
+    <input type="text" id="noncoregdp" oninput="calculateCore();" class="input"><br>
+    <div id="flex_container">
+        <h1 style="font-family:'Balsamiq Sans';margin-top: -35px">BUDGET: </h1>
+        <h1 id="outputNonCoreBudget" class="output">
         </h1>
     </div>
     <script>
@@ -53,13 +70,25 @@
             document.getElementById("outputPopulation").innerHTML = totalPop || 0;
         }
 
-        function calculateTotal() {
+        function calculateBudget() {
             let population = parseFloat(document.getElementById("population").value);
             let gdp = parseFloat(document.getElementById("gdp").value);
             let total = population * gdp;
             let totalBudget = total * 2.5;
             let formattedBudget = numberWithCommas(totalBudget);
             document.getElementById("outputBudget").innerHTML = formattedBudget || 0;
+        }
+        function calculateCore() {
+            let corepopulation = parseFloat(document.getElementById("corepopulation").value)
+            let noncorepopulation = parseFloat(document.getElementById("noncorepopulation").value)
+            let coregdp = parseFloat(document.getElementById("coregdp").value)
+            let noncoregdp = parseFloat(document.getElementById("noncoregdp").value)
+            let coreadded = corepopulation * coregdp;
+            let coretotal = coreadded * 2.5;
+            let noncoreadded = noncorepopulation *noncoregdp;
+            let noncoretotal = noncoreadded * 1.5;
+            let totalNonCoreBudget = numberWithCommas(coretotal + noncoretotal)
+            document.getElementById("outputNonCoreBudget").innerHTML = totalNonCoreBudget || 0;
         }
     </script>
 </body>
