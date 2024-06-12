@@ -3,20 +3,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <h1 class="heading">
-        CALCULATOR FOR INTERWAR NRP AND EMPIRES NRP
-    </h1>
+    <h1 class="heading">ECONOMY CALCULATOR FOR NATION ROLEPLAY</h1>
     <h1 class="calculatortype">POPULATION GROWTH CALCULATOR (CORE / NON CORE POPULATION) </h1>
+    <h1 class="calculatortype">Formula used: Current Population x Growth Modifier</h1>
     <div>
         <p class="inputwhat">Enter Population</p>
         <input type="text" id="populationOriginal" oninput="calculatePopulation();" class="input"><br>
@@ -24,27 +19,22 @@
         <input type="text" id="multiplier" oninput="calculatePopulation();" class="input"><br>
     </div>
     <div id="flex_container">
-        <h1 style="font-family:'Balsamiq Sans';margin-top: -35px">POPULATION: </h1>
-        <h1 id="outputPopulation" class="output">
-        </h1>
+        <h1 class="outputtext">POPULATION: </h1>
+        <h1 id="outputPopulation" class="output"></h1>
     </div>
     <h1 class="line">_____________________________________________________________________________</h1>
-    <h1 class="calculatortype">
-        BUDGET CALCULATOR (CORE POPULATION ONLY)
-    </h1>
+    <h1 class="calculatortype">BUDGET CALCULATOR (CORE POPULATION ONLY)</h1>
+    <h1 class="calculatortype">Formula used: (Core Population x Core GDP per Capita) x 2.5</h1>
     <p class="inputwhat">Enter Core Population</p>
     <input type="text" id="population" oninput="calculateBudget();" class="input"><br>
     <p class="inputwhat">Enter Core GDP per Capita</p>
     <input type="text" id="gdp" oninput="calculateBudget();" class="input"><br>
     <div id="flex_container">
-        <h1 style="font-family:'Balsamiq Sans';margin-top: -35px">BUDGET: </h1>
-        <h1 id="outputBudget" class="output">
-        </h1>
+        <h1 class="outputtext">BUDGET: </h1>
+        <h1 id="outputBudget" class="output"></h1>
     </div>
     <h1 class="line">_____________________________________________________________________________</h1>
-    <h1 class="calculatortype"> 
-        BUDGET CALCULATOR (CORE, NON CORE POPULATION)
-    </h1>
+    <h1 class="calculatortype">BUDGET CALCULATOR (CORE, NON CORE POPULATION)</h1><br>
     <p class="inputwhat">Enter Core Population</p>
     <input type="text" id="corepopulation" oninput="calculateCore();" class="input"><br>
     <p class="inputwhat">Enter Core GDP per Capita</p>
@@ -54,42 +44,10 @@
     <p class="inputwhat">Enter Non-Core GDP per Capita</p>
     <input type="text" id="noncoregdp" oninput="calculateCore();" class="input"><br>
     <div id="flex_container">
-        <h1 style="font-family:'Balsamiq Sans';margin-top: -35px">BUDGET: </h1>
-        <h1 id="outputNonCoreBudget" class="output">
-        </h1>
+        <h1 class="outputtext">BUDGET: </h1>
+        <h1 id="outputNonCoreBudget" class="output"></h1>
     </div>
-    <script>
-        function numberWithCommas(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        function calculatePopulation() {
-            let populationOriginal = parseFloat(document.getElementById("populationOriginal").value);
-            let multiplier = parseFloat(document.getElementById("multiplier").value) / 100; // Convert multiplier to percentage
-            let popAdd = populationOriginal * multiplier;
-            let totalPop = numberWithCommas(populationOriginal + popAdd);
-            document.getElementById("outputPopulation").innerHTML = totalPop || 0;
-        }
-
-        function calculateBudget() {
-            let population = parseFloat(document.getElementById("population").value);
-            let gdp = parseFloat(document.getElementById("gdp").value);
-            let total = population * gdp;
-            let totalBudget = total * 2.5;
-            let formattedBudget = numberWithCommas(totalBudget);
-            document.getElementById("outputBudget").innerHTML = formattedBudget || 0;
-        }
-        function calculateCore() {
-            let corepopulation = parseFloat(document.getElementById("corepopulation").value)
-            let noncorepopulation = parseFloat(document.getElementById("noncorepopulation").value)
-            let coregdp = parseFloat(document.getElementById("coregdp").value)
-            let noncoregdp = parseFloat(document.getElementById("noncoregdp").value)
-            let coreadded = corepopulation * coregdp;
-            let coretotal = coreadded * 2.5;
-            let noncoreadded = noncorepopulation *noncoregdp;
-            let noncoretotal = noncoreadded * 1.5;
-            let totalNonCoreBudget = numberWithCommas(coretotal + noncoretotal)
-            document.getElementById("outputNonCoreBudget").innerHTML = totalNonCoreBudget || 0;
-        }
-    </script>
 </body>
+<script src="main.js">
+</script>
 </html>

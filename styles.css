@@ -1,12 +1,5 @@
 body {
-    background-image: url(EMPIRE\ MAP.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: rgb(52, 51, 51);
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
-    color: #fff;
+background-color: black;
 }
 .heading {
     color:white;
@@ -38,7 +31,9 @@ body {
     border-radius: 25px;
     padding: 10px;
     margin-top: -20px;
-    
+}
+.input:focus {
+    outline: none;
 }
 #flex_container {
     display: flex;
@@ -46,21 +41,27 @@ body {
 }
 .calculatortype {
     color:orange;
-    font-family: 'Open Sans'
+    font-family: 'Open Sans';
+    margin-top: -10px
 }
 .inputwhat {
     text-align:center;
-    color:rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
     font-family: 'Open Sans';
     font-size: 30px;
     margin-top: -30px;
 }
 .output {
-    color:rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
     font-family: 'Balsamiq Sans';
     text-align:center;
     margin-top: -35px
 }
+.outputtext {
+    font-family:'Balsamiq Sans';
+    margin-top: -35px;
+    color: yellow
+} 
 .line {
     text-align: center;
     color:orange; 
