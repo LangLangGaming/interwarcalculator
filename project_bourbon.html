@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="favicons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>Economy Calculator</title>
+</head>
+<body>
+    <h1 class="heading">
+        <span class="streamline--decent-work-and-economic-growth-solid" style="margin-right:10px"></span> <span style="color:orange;">E</span>CONOMY    <span style="color:orange;margin-left:10px"> C</span>ALCULATOR
+    </h1>
+    <h1 class="heading">FOR NATION ROLEPLAY</h1>
+    <h2 class="calcmenu">NAPOLEON'S LEGACY NRP</h2>
+    <nav class="flex-container">
+        <div>
+            <a href="index.html">HOME</a>
+        </div>
+        <div style="margin-left: 50px;">
+            <a href="project_bourbon.html">NAPOLEON'S LEGACY NRP</a>
+        </div>
+        <div style="margin-left: 50px;">
+            <a href="interwar_nrp.html">INTERWAR RP</a>
+        </div>
+    </nav>
+    <p class="line">______________________________________________</p>
+    <h1 class="calculatorname">POPULATION GROWTH CALCULATOR</h1>
+    <div>
+        <p class="inputwhat">Enter Population</p>
+        <input type="text" id="populationOriginalGrowth" oninput="bourbonPopulation();" class="input"><br>
+        <p class="inputwhat">Enter Stability (1-10)</p>
+        <input type="text" id="stability" oninput="bourbonPopulation();" class="input"><br>
+    </div>
+    <div id="flex_container">
+        <h1 class="outputtext">New Population: </h1>
+        <h1 id="outputPopulation" class="output"></h1>
+    </div>
+    <h1 class="calculatorname">BUDGET CALCULATOR</h1>
+    <div>
+        <p class="inputwhat">Enter Population</p>
+        <input type="text" id="populationOriginalBudget" oninput="bourbonBudget();" class="input"><br>
+        <p class="inputwhat">Enter Number of Provinces</p>
+        <input type="text" id="provinceCount" oninput="bourbonBudget();" class="input"><br>
+        <p class="inputwhat">Enter Tax Rate (Default 18%, editable for the cost of stability)</p>
+        <input type="text" id="tax" oninput="bourbonBudget();" class="input"><br>
+        
+    </div>
+    <div id="flex_container">
+        <h1 class="outputtext">Budget: </h1>
+        <h1 id="outputBourbonBudget" class="output"></h1>
+    </div>
+    <h1 id="outputStabilityDifference" class="outputdifftext"></h1>
+    <script src="javascript/bourbon.js"></script>
+</body>
+</html>
+
