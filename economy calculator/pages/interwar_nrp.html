@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="favicons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <title>Economy Calculator</title>
+</head>
+<body>
+    <h1 class="heading">
+        <span class="streamline--decent-work-and-economic-growth-solid" style="margin-right:10px"></span> <span
+            style="color:orange;">E</span>CONOMY <span
+            style="color:orange;margin-left:10px"> C</span>ALCULATOR
+    </h1>
+    <h1 class="heading">FOR NATION ROLEPLAY</h1>
+    <h2 class="calcmenu">THE CROWN'S TWILIGHT NRP</h2>
+    <nav class="flex-container">
+        <div>
+            <a href="/index.html">HOME</a>
+        </div>
+        <div style="margin-left: 30px;">
+            <a href="/calculators.html">CALCULATORS</a>
+        </div>
+    </nav>
+    <h1 class="calculatorname">POPULATION CALCULATOR</h1>
+    <div>
+        <p class="inputwhat">Enter Population</p>
+        <input type="text" id="populationOriginal" oninput="calculatePopulation();" class="input"><br>
+        <p class="inputwhat">Enter Multiplier (%)</p>
+        <input type="text" id="multiplier" oninput="calculatePopulation();" class="input"><br>
+    </div>
+    <div id="flex_container">
+        <h1 class="outputtext">POPULATION: </h1>
+        <h1 id="outputPopulation" class="output"></h1>
+    </div>
+    <h1 class="line">_____________________________________________________________________________</h1>
+    <h1 class="calculatorname">BUDGET CALCULATOR (CORE POPULATION ONLY)</h1>
+    <p class="inputwhat">Enter Core Population</p>
+    <input type="text" id="population" oninput="calculateBudget();" class="input"><br>
+    <p class="inputwhat">Enter Core GDP per Capita</p>
+    <input type="text" id="gdp" oninput="calculateBudget();" class="input"><br>
+    <div id="flex_container">
+        <h1 class="outputtext">BUDGET: </h1>
+        <h1 id="outputBudget" class="output"></h1>
+    </div>
+    <h1 class="line">_____________________________________________________________________________</h1>
+    <h1 class="calculatorname">BUDGET CALCULATOR (CORE, NON CORE POPULATION)</h1><br>
+    <p class="inputwhat">Enter Core Population</p>
+    <input type="text" id="corepopulation" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Core GDP per Capita</p>
+    <input type="text" id="coregdp" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Non-Core Population</p>
+    <input type="text" id="noncorepopulation" oninput="calculateCore();" class="input"><br>
+    <p class="inputwhat">Enter Non-Core GDP per Capita</p>
+    <input type="text" id="noncoregdp" oninput="calculateCore();" class="input"><br>
+    <div id="flex_container">
+        <h1 class="outputtext">BUDGET: </h1>
+        <h1 id="outputNonCoreBudget" class="output"></h1>
+    </div>
+</body>
+<script src="/javascript/interwar.js"></script>
+</html>
+
