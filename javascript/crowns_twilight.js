@@ -12,11 +12,12 @@ function removeCommas(x) {
 function twilightBudget() {
     let population = parseFloat(removeCommas(document.getElementById("population").value)) || 0;
     let gdp = parseFloat(removeCommas(document.getElementById("gdp").value)) || 0;
-    let taxation = parseFloat(removeCommas(document.getElementById("taxation").value)) || 0;
+    let taxation = parseFloat(removeCommas(document.getElementById("taxation").value)) / 100 || 0; // Divide by 100 to treat as a percentage
     let compliance = parseFloat(removeCommas(document.getElementById("compliance").value)) || 0;
-    let budget = numberWithCommas((population * compliance) * (gdp * taxation));
-    document.getElementById("outputTwilightBudget").innerHTML = budget;
+    let budget = Math.round((population * compliance) * (gdp * taxation)); // Round the result
+    document.getElementById("outputTwilightBudget").innerHTML = numberWithCommas(budget);
 }
+
 
 function formatInputValue(inputElement) {
     let value = removeCommas(inputElement.value);
